@@ -1,0 +1,13 @@
+defaults: &defaults
+  api_key: "c23f6040a4e9e4b222315a185967e63f"
+  states_url: "https://search.onboard-apis.com/areaapi/v2.0.0/state/lookup"
+  counties_url: "https://search.onboard-apis.com/areaapi/v2.0.0/county/lookup"
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

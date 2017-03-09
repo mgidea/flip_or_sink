@@ -1,0 +1,18 @@
+defaults: &defaults
+  username: <%= ENV['USPS_USERNAME'] || '386BUILD6490' %>
+  password: <%= ENV['USPS_PASSWORD'] || '514CH12PI732' %>
+  address_verification_test_url: 'http://production.shippingapis.com/ShippingAPITest.dll'
+  city_and_state_test_url: 'http://production.shippingapis.com/ShippingAPITest.dll'
+  zip_code_test_url: 'http://production.shippingapis.com/ShippingAPITest.dll'
+  address_verification_url: 'http://production.shippingapis.com/ShippingAPI.dll'
+  city_and_state_url: 'http://production.shippingapis.com/ShippingAPITest.dll'
+  zip_code_url: 'http://production.shippingapis.com/ShippingAPI.dll'
+
+production:
+  <<: *defaults
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults

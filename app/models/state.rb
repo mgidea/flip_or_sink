@@ -12,6 +12,10 @@ class State < ApplicationRecord
     end
   end
 
+  def import_counties(counties)
+    County.import_state_counties(self, counties)
+  end
+
   has_many :counties, :inverse_of => :state, :dependent => :destroy
   has_many :cities, :inverse_of => :state, :dependent => :destroy
   has_many :points_of_interest, :inverse_of => :state, :dependent => :destroy
