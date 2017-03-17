@@ -7,6 +7,7 @@ class CreateStates < ActiveRecord::Migration[5.0]
       t.string :geo_key
       t.float  :geo_center_latitude
       t.float  :geo_center_longitude
+      t.string :country
 
       t.timestamps
     end

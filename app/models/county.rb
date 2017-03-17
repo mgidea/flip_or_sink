@@ -4,6 +4,8 @@ class County < ApplicationRecord
   DECODER = {"id" => "code"}
 
   belongs_to :state, :inverse_of => :counties
+  has_many :cities, :inverse_of => :county, :autosave => true
+  has_many :zip_codes, :through => :cities
 
   def self.import_state_counties(state, counties)
     counties.map do |county_hash|

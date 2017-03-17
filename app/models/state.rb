@@ -16,8 +16,9 @@ class State < ApplicationRecord
     County.import_state_counties(self, counties)
   end
 
-  has_many :counties, :inverse_of => :state, :dependent => :destroy
-  has_many :cities, :inverse_of => :state, :dependent => :destroy
-  has_many :points_of_interest, :inverse_of => :state, :dependent => :destroy
-  has_many :properties, :inverse_of => :state, :dependent => :destroy
+  has_many :counties, :inverse_of => :state, :dependent => :destroy, :autosave => true
+  has_many :cities, :inverse_of => :state, :dependent => :destroy, :autosave => true
+  has_many :zip_codes, :through => :cities
+  has_many :points_of_interest, :inverse_of => :state, :dependent => :destroy, :autosave => true
+  has_many :properties, :inverse_of => :state, :dependent => :destroy, :autosave => true
 end
